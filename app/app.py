@@ -24,5 +24,12 @@ def get_id_post(id:int):
 
     return text_post.get(id)
 
+@app.post("?posts")
+def create_post(post:PostCreate):
+    new_post ={"title" : post.title, "content" : post.content}
+    text_post[max(text_post.keys()) +1] = new_post
+    return new_post
+
+
 
 
